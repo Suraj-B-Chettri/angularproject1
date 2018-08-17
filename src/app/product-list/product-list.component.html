@@ -1,0 +1,55 @@
+<div class= 'panel panel-primary'>
+  <div class="panel-heading">
+    {{title}}
+  </div>
+
+  
+  <div class= "panel-body">
+      <div class='row'>
+          <div class="col-md-2"><h3 id="ses">Filter by:</h3></div>
+          <div class="col-md-4"> 
+            <div id="lala">  
+            <input type="text" class="form-control" [(ngModel)] = 'listFilter' />
+          </div>
+            </div>
+      </div>
+  
+      <div class="row">
+          <div class="col-md-6">
+              <h3>Filtered by:<span>{{listFilter}}</span></h3>
+          </div>
+      </div>
+
+      <div class="table table-stripped">
+          <table class="table">
+              <thead>
+                  <tr  >
+                      <th>
+                          <button class="btn btn-primary" (click)='toggleImage()'>
+                            {{showImage ? 'Hide' : 'Show'}} Image</button>                      
+
+                      </th>
+                      <th><b>Product</b></th>
+                      <th><b>Code</b></th>
+                      <th><b>Available</b></th>
+                      <th><b>Price</b></th>
+                      <th><b>5 Star Rating</b></th>
+                  </tr>
+              </thead>
+              <tbody>
+                    <tr *ngFor = 'let product of products | ProductFilter : listFilter ' >
+                            <td><img src="{{product.imgurl}}" height="45px" width="40px"></td>
+                            <td><a [routerLink] = "['/product', product.productCode]" (click)="getId()">{{product.productName}} </a> </td>
+                            <td>{{product.productCode}}</td>
+                            <td>{{product.availabel}}</td>
+                            <td>{{product.price}}</td>
+                            <td>{{product.ratings}}</td>
+                          </tr>
+        
+                
+              </tbody>
+          </table>
+      </div>
+  </div>
+</div>
+<app-costumer></app-costumer>

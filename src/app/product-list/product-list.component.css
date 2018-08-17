@@ -1,0 +1,24 @@
+#lala {
+    padding-top: 10;
+}
+.panel-heading{
+    text-align: center;
+}
+th{
+    color: blue;
+}
+span {
+    margin-left : 90px;
+    border-radius:   5px;
+    padding: 8px;
+    background-color: #000000;
+    color: white;
+}
+
+table{
+    margin-bottom: 0px;
+}
+
+.panel-body{
+padding-bottom: 0px;
+}
